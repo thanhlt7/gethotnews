@@ -1,0 +1,11 @@
+<%= will_paginate @entries %>
+<div class="container">
+  <% @entries.each do |entry| %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= link_to entry.title, entry.url %> - <i> published <%= time_ago_in_words(entry.published) %> ago.</i><%= entry.fblikes %><img src="https://ac3d197e9505f18c50e0-32b9f49f48b2c22be12b40ee79e2acc4.ssl.cf1.rackcdn.com/icon/logos_and_badges_thumbs_up/7x5uDqD4GBTrCSbXggZ-/58C79CAE-C3E6-4D6A-BAF5-A03631274FD7.png" width="30" height="30"> - <%= entry.feed.name %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= will_paginate @entries %>
