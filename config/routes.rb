@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   
   resources :feeds 
-  resources :entries, only: [:index, :show]
     
-
+  resources :categories
+  resources :entries   
+  
   root 'entries#index'
 
 

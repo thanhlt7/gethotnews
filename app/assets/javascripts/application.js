@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require masonry/jquery.masonry
+//= require masonry/jquery.infinitescroll.min
+//= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .

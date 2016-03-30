@@ -1,0 +1,21 @@
+<div class="box panel panel-default">
+			<div class="panel-heading">
+				<img src="<%= entry.image_url %>">
+			</div>
+			<div class="panel-body">
+				<h4><%= link_to entry.title.gsub(/&#34;/, '"'), entry.url %></h4>
+				<p class="user">
+					<i> published <%= time_ago_in_words(entry.published) %> ago.</i>
+				</p>
+			</div>	
+			<div class="panel-footer">
+				<div class="row">
+					<div class="col-md-6">
+						<%= entry.fblikes %><img src="https://ac3d197e9505f18c50e0-32b9f49f48b2c22be12b40ee79e2acc4.ssl.cf1.rackcdn.com/icon/logos_and_badges_thumbs_up/7x5uDqD4GBTrCSbXggZ-/58C79CAE-C3E6-4D6A-BAF5-A03631274FD7.png" width="30" height="30"> 
+					</div>
+					<div class="col-md-6">
+						<h5><%= entry.feed.name %></h5>
+					</div>
+				</div>
+			</div>
+</div>
