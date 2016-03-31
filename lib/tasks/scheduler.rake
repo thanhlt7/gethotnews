@@ -9,7 +9,6 @@ namespace :scheduler do
       content.entries.each do |entry|
         if entry.url != nil && entry.url != ""
           like = get_total_like(entry.url)
-          p "#{like}"
           p "#{entry.url}"
           if like[0]['total_count'] > 100 && like[0]['total_count'] < 100000
             needed_image = get_image_url(entry.url)
@@ -45,14 +44,21 @@ namespace :scheduler do
   def get_image_url(url)
     doc = Nokogiri::HTML(open(url))
     data = doc.css('img')
+    if data == nil || data == ""
+      p "Can not get data from URL"
+    else
       data.each do |image|
-        if image['src'].split('.').last != "gif"
-          imgSize = FastImage.size(image['src'])
-          if imgSize.first.to_i > 399
-            return image['src']
-            break
+        if image['src'] == nil || image['src'] == ""
+          p "Can not get IMAGE"
+        else
+          if image['src'].split('.').last != "gif"
+            imgSize = FastImage.size(image['src'])
+            if imgSize.first.to_i > 399
+              return image['src']
+            end
           end
         end
       end
+    end
   end
 end
