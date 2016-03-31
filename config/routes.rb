@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   resources :feeds 
     
   resources :categories
-  resources :entries   
+  resources :entries,  :only => [:index]
   
   root 'entries#index'
+
+  get 'entries/:category' => 'entries#index', :as => :seo_entries
 
 
   # The priority is based upon order of creation: first created -> highest priority.

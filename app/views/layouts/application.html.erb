@@ -13,9 +13,9 @@
 				<%= link_to "HOT NEWS", root_path %>
 			</div>
 			<ul class="nav navbar-nav">
-			 <li><%= link_to "All news", root_path %></li>
+			 <li><%= link_to "All news", root_path, class: current_class?(root_path) %></li>
 			  <% Category.all.each do |category| %>
-		  	  	<li><%= link_to category.name, entries_path(category: category.name), class: current_class?(entries_path(category: category.name))  %></li>
+		  	  	<li><%= link_to category.name, seo_entries_path(category: category.name), class: current_class?(seo_entries_path(category: category.name))  %></li>
 		  	  <%end%>
 		    </ul>
 		</div>
