@@ -27,6 +27,14 @@ set :puma_workers, 0
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
+
+namespace :rake do  
+  desc "Run a task on a remote server."  
+  # run like: cap staging rake:invoke task=a_certain_task  
+  task :invoke do  
+    run("cd #{deploy_to}/current && /usr/bin/env rake 'scheduler:feeds' RAILS_ENV=production") 
+  end  
+end
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
