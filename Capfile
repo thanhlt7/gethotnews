@@ -9,6 +9,7 @@ require 'capistrano/rails/assets' # for asset handling add
 require 'capistrano/rails/migrations' # for running migrations
 require 'capistrano/puma'
 require 'capistrano/rake'
+require "whenever/capistrano"
 
 # Include tasks from other gems included in your Gemfile
 #
