@@ -4,26 +4,22 @@
 
 
 $ ->
-	$('#entries').imagesLoaded ->
-    	$('#entries').masonry
+  $('#entries').imagesLoaded ->
+    $('#entries').masonry
       itemSelector: '.box'
       isFitWidth: true
- 	
- 	$('#entries').infinitescroll {
+  $('#entries').infinitescroll {
     navSelector: '.pagination'
     nextSelector: '.pagination a'
     itemSelector: '.box'
     loading:
       finishedMsg: ''
       img: ''
-   }, (newElements) ->
-    # hide new items while they are loading
+  }, (newElements) ->
     $newElems = $(newElements).css(opacity: 0)
-    # ensure that images load before adding to masonry layout
-    $newElems.imagesLoaded ->
-      # show elems now they're ready
+    $('#entries').append($newElems).imagesLoaded ->
       $newElems.animate opacity: 1
-      $('#entries').masonry 'appended', $newElems, true
+      $('#entries').masonry 'appended', $newElems
       return
     return
   return
