@@ -7,13 +7,13 @@ namespace :scheduler do
     Feed.all.each do |feed|
       content = Feedjira::Feed.fetch_and_parse feed.url
       content.entries.each do |entry|
-        if entry.url != nil && entry.url != ""
+        if !entry.url.blank?
           like = get_total_like(entry.url)
           p "#{entry.url}"
           if like[0]['total_count'] > 100 && like[0]['total_count'] < 100000
             needed_image = get_image_url(entry.url)
             p "#{needed_image}"
-            if needed_image != "" && needed_image != nil
+            if !needed_image.blank?
               local_entry = feed.entries.where(title: entry.title).first_or_initialize
               local_entry.update_attributes(fblikes: like[0]['total_count'], author: entry.author, 
               url: entry.url, published: entry.published, category_id: feed.category_id, image_url: needed_image)
@@ -44,11 +44,11 @@ namespace :scheduler do
   def get_image_url(url)
     doc = Nokogiri::HTML(open(url))
     data = doc.css('img')
-    if data == nil || data == ""
+    if data.blank?
       p "Can not get data from URL"
     else
       data.each do |image|
-        if image['src'] == nil || image['src'] == ""
+        if image['src'].blank?
           p "Can not get IMAGE"
         else
           if image['src'].split('.').last != "gif"
