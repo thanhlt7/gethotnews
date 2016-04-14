@@ -19,7 +19,7 @@
 
 
 body {
-	background: #E9E9E9;
+	background: RGBA(224, 83, 18, 0.95);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,20 +55,26 @@ nav {
 			max-width: 100%;
 			height: auto;
 		}
-		h2 {
-			font-size: 22px;
+		h4 {
+			
 			margin: 0;
 			padding: 25px 10px;
 			a {
 				color: #474747;
+				&:hover {
+				text-decoration: none;
+				
+			  }
 			}
 		}
+		
 		.user {
 			font-size: 12px;
 			border-top: 1px solid #EAEAEA;
 			padding: 15px;
 			margin: 0;
 		}
+		
 	}
 }
 

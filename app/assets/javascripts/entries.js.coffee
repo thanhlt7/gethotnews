@@ -8,6 +8,13 @@ $ ->
     $('#entries').masonry
       itemSelector: '.box'
       isFitWidth: true
+   $(window).bind 'scroll', ->
+    if $(window).scrollTop() > 50
+      $('nav').addClass 'navbar-fixed-top'
+    else
+      $('nav').removeClass 'navbar-fixed-top'
+    return   
+    
   $('#entries').infinitescroll {
     navSelector: '.pagination'
     nextSelector: '.pagination a'
@@ -17,9 +24,9 @@ $ ->
       img: ''
   }, (newElements) ->
     $newElems = $(newElements).css(opacity: 0)
-    $('#entries').append($newElems).imagesLoaded ->
+    $newElems.imagesLoaded ->
       $newElems.animate opacity: 1
-      $('#entries').masonry 'appended', $newElems
-      return
+      $('#entries').masonry 'appended', $newElems, true
     return
+   return
   return
