@@ -17,6 +17,7 @@
 			  <% Category.all.each do |category| %>
 		  	  	<li><%= link_to category.name, seo_entries_path(category: category.name), class: current_class?(seo_entries_path(category: category.name))  %></li>
 		  	  <%end%>
+		  	<li><%= link_to "HOT Videos", youtube_all_times_path, class: current_class?(youtube_all_times_path) %></li>
 		    </ul>
 		</div>
 	</nav>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'entries#index'
 
   get 'entries/:category' => 'entries#index', :as => :seo_entries
+  resources :youtube_all_times
 
 
   # The priority is based upon order of creation: first created -> highest priority.
