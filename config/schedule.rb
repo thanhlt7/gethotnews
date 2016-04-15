@@ -16,4 +16,9 @@ every :day, at: '1am' do
   # specify the task name as a string
   rake 'scheduler:feeds'
 end
+
+every :day, at: '10pm' do
+  # specify the task name as a string
+  rake 'mostviewedyt:mostviewedalltime'
+end
 # Learn more: http://github.com/javan/whenever
