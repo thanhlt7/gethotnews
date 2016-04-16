@@ -24,8 +24,10 @@ namespace :mostviewedyt do
     data = doc.css('.yt-lockup-meta-info')
       data.each do |info|
       	str = "lượt"
+        p "Start #{info}"
       	newinfo = info.text.encode(Encoding::ISO_8859_1).force_encoding("utf-8")
       	  if newinfo.include?(str)
+            p "New #{newinfo}"
       	  	newinfo = newinfo.gsub(/trước/,'trước~')
       	  	timeandview = newinfo.split('~')
       	    alltime << timeandview[0]
