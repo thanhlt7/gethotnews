@@ -31,7 +31,8 @@ namespace :mostviewedyt do
       	  	newinfo = newinfo.gsub(/ago/,'ago~')
       	  	timeandview = newinfo.split('~')
       	    alltime << timeandview[0]
-            allviews << timeandview[1]
+            num_view = timeandview[1].gsub(/views/,'')
+            allviews << num_view
       	  end
       end
     data = doc.css('.yt-uix-tile-link')
@@ -53,6 +54,6 @@ namespace :mostviewedyt do
       for i in 0..19
         local_entry = YoutubeAllTime.where(url: alllink[i]).first_or_initialize
         local_entry.update_attributes(title: titles[i], image_url: allimages[i], time: alltime[i], viewcount: allviews[i])
-        p "#{alltime[i]}"
+        p "#{allviews[i]}"
       end
   end
