@@ -51,6 +51,6 @@ namespace :mostviewedyt do
       for i in 0..19
         local_entry = YoutubeAllTime.where(url: alllink[i]).first_or_initialize
         local_entry.update_attributes(title: titles[i], image_url: allimages[i], time: alltime[i], viewcount: allviews[i])
-        p "#{alllink[i]}"
+        p "#{alltime[i]}"
       end
   end

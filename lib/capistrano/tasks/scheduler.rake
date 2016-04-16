@@ -4,7 +4,7 @@ namespace :custom do
     on roles(:app) do
       within "#{current_path}" do
         with rails_env: "#{fetch(:stage)}" do
-          execute :rake, "scheduler:feeds"
+          execute :rake, "mostviewedyt:mostviewedalltime"
         end
       end
     end
