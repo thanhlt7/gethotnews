@@ -7,23 +7,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
 			<div class="navbar-brand">
 				<%= link_to "THANH LE", root_path %>
 			</div>
 			<ul class="nav navbar-nav">
-			 <li><%= link_to "ALL", root_path, class: current_class?(root_path) %></li>
-			  <% Category.all.each do |category| %>
-		  	  	<li><%= link_to category.name, seo_entries_path(category: category.name), class: current_class?(seo_entries_path(category: category.name))  %></li>
-		  	  <%end%>
+			 <li class="dropdown"><%= link_to "#", data: {toggle: 'dropdown'}, class: 'dropdown-toggle' do %>
+  						HOT News <span class="caret"></span>
+					<%end%>
+			   <ul class="dropdown-menu">
+			     <% Category.all.each do |category| %>
+		  	  	 <li><%= link_to category.name, seo_entries_path(category: category.name), class: current_class?(seo_entries_path(category: category.name))  %></li>
+		  	     <%end%>
+			   </ul>
+			  
+		  	</li>
 		  	<li><%= link_to "HOT Videos", youtube_all_times_path, class: current_class?(youtube_all_times_path) %></li>
+		  	<li><%= link_to "HOT Templates", "#"%></li>
 		    </ul>
 		</div>
 	</nav>
 	<div class="container">
 		<%= yield %>
 	</div>
-
+	<div class="footer">
+		<div class="container">
+			<p>&copy 2016 Thanh Le. All rights reserved | Design by Thanh Le Trung</a></p>
+		</div>
+	</div>
 </body>
 </html>

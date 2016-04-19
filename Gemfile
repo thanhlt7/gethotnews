@@ -44,7 +44,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 gem 'puma'
 group :development do
-  gem 'sqlite3'
+  #gem 'sqlite3'
   gem 'capistrano'
   gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false
