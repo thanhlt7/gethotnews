@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   
   root 'entries#index'
 
-  get 'entries/:category' => 'entries#index', :as => :seo_entries
+  get 'news/:category' => 'entries#index', :as => :seo_entries
   resources :youtube_all_times
+  get 'youtube/alltime' => 'youtube_all_times#index', :as => :youtube_all
+  resources :youtube_todays
+  get 'youtube/today' => 'youtube_todays#index', :as => :youtube_td
 
 
   # The priority is based upon order of creation: first created -> highest priority.

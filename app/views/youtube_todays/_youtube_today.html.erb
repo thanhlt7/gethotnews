@@ -1,0 +1,18 @@
+<div class="box panel panel-default">
+			<div class="panel-heading">
+				<img src="<%= youtube_today.image_url %>">
+			</div>
+			<div class="panel-body">
+				<h4><%= link_to youtube_today.title.gsub(/&#34;/, '"'), youtube_today.link %></h4>
+			</div>	
+			<div class="panel-footer">
+				<div class="row">
+					<div class="col-md-6">
+						<%= youtube_today.time %>
+					</div>
+					<div class="col-md-6">
+						<h5><%= youtube_today.created_at %></h5>
+					</div>
+				</div>
+			</div>
+</div>

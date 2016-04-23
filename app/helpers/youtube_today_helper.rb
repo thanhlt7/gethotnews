@@ -1,0 +1,2 @@
+module YoutubeTodayHelper
+end

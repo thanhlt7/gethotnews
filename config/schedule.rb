@@ -21,4 +21,8 @@ every :day, at: '10pm' do
   # specify the task name as a string
   rake 'mostviewedyt:mostviewedalltime'
 end
+
+every 2.hours do
+	rake 'mostviewedyt:mostviewedtoday'
+end
 # Learn more: http://github.com/javan/whenever

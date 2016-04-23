@@ -18,20 +18,46 @@
 @import "bootstrap";
 
 
-body {
-	background: RGBA(224, 83, 18, 0.95);
+html, body{
+    font-size: 100%;
+	background:	#fff;
+	font-family: 'Cabin', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 100;
 }
 
+.header {
+    background: #1d1811  !important;
+}
+
+.navbar-default {
+    background: #1d1811;
+    border: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #f89406;
+}
+
+.navbar-nav > li > a {
+    padding: 30px 20px 0;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
 nav {
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 	.navbar-brand {
 		a {
-			color: #BD1E23;
-			font-weight: bold;
+			color: #fff !important;
 			&:hover {
 				text-decoration: none;
 			}
@@ -78,12 +104,31 @@ nav {
 	}
 }
 
-nav .navbar-brand a {
-	letter-spacing: .4em;
+.navbar-brand {
+    float: left;
+    height: 80px;
+    padding: 31px 0 0;
+    font-size: 3.5em;
+    line-height: 20px;
+    color: #fff !important;
+    font-family: 'Alex Brush', cursive;
 }
 
-textarea {
-	min-height: 250px;
+
+nav .navbar-nav {
+	margin: 0 0 0 13em;
+}
+
+.footer-bottom{
+	padding:2em 0;
+	background:#000;
+	text-align:center;
+}
+
+.footer-bottom p{
+	font-size:14px;
+	color:#817F7F;
+	margin:0;
 }
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
