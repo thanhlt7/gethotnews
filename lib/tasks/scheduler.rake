@@ -44,7 +44,7 @@ namespace :scheduler do
   def get_image_url(url)
     doc = Nokogiri::HTML(open(url))
     data = doc.css('img')
-    if data.nil? || data.emty?
+    if data.nil? || data.empty?
       p "Can not get data from URL"
     else
       data.each do |image|
