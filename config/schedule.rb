@@ -22,7 +22,19 @@ every :day, at: '10pm' do
   rake 'mostviewedyt:mostviewedalltime'
 end
 
-every 2.hours do
+every :day, at: '2am' do
+	rake 'mostviewedyt:mostviewedtoday'
+end
+
+every :day, at: '7am' do
+	rake 'mostviewedyt:mostviewedtoday'
+end
+
+every :day, at: '12pm' do
+	rake 'mostviewedyt:mostviewedtoday'
+end
+
+every :day, at: '8pm' do
 	rake 'mostviewedyt:mostviewedtoday'
 end
 # Learn more: http://github.com/javan/whenever
