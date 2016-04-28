@@ -24,7 +24,7 @@ namespace :mostviewedyt do
   end
 
   def get_video_info(url)
-      
+      result = get_information(url)
       for i in 0..20
         local_entry = YoutubeAllTime.where(url: result[0][i]).first_or_initialize
         local_entry.update_attributes(title: result[3][i], image_url: result[4][i], 
