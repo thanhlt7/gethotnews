@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :youtube_todays
   get 'youtube/today' => 'youtube_todays#index', :as => :youtube_td
 
-  get "/pages/:page" => "pages#show"
+  get "/pages/:page" => "pages#show", :as => :template_page
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
