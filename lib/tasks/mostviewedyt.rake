@@ -4,7 +4,7 @@ require 'open-uri'
 namespace :mostviewedyt do
   task mostviewedalltime: [:environment] do
   	    url = "https://www.youtube.com/results?search_sort=video_view_count&filters=video&search_query=site%3Ayoutube.com"
-    	get_video_info(url)
+    	  get_video_info(url)
     end
 
   task mostviewedtoday: [:environment] do
